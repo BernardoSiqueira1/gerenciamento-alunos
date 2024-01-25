@@ -1,0 +1,133 @@
+body{margin:0px; padding: 0px; background-color: rgb(74, 74, 74);}
+
+/* Header // Navbar */
+.headercontainer{
+    background-color: rgb(65, 115, 224);
+    width: 100%;
+    height: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item{
+    padding: 10px;
+    color:white;
+    text-decoration: none;
+    font-weight:bolder;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Montserrat'
+}
+
+.nav-item:hover{
+    color: rgb(180, 180, 180);
+}
+
+/* Tabela visualização dos dados */
+
+.tableDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dataTable{
+	border: 1px rgb(215, 215, 215) solid;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 1200px;
+	text-align: center;
+}
+
+.tableHead{
+	border-bottom: 2px white solid;
+	color:white;
+	font-family: 'Montserrat';
+}
+
+.tableData{
+	border-bottom: 1px rgb(215, 215, 215) solid;
+	border-right: 1px rgb(215, 215, 215) solid;
+	color:white;
+	font-family: 'Montserrat';
+}
+
+.opt-btn-edit{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	color:white;
+	background-color: rgb(62, 62, 255);
+	border: white 1px solid;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.opt-btn-delete{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	color:white;
+	background-color: rgb(255, 81, 81);
+	border: white 1px solid;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Barra de pesquisa */
+.searchBar{
+	float:right;
+}
+
+/* Formulario enviar dados */
+
+.formBox{
+    text-align: center;
+}
+
+.formLabel{
+    font-family: 'Montserrat';
+    color: white;
+    font-weight: bold;
+}
+
+.formInput{
+	border: 2px white solid;
+	border-radius: 5px;
+	background-color: white;
+	font-family: 'Montserrat';
+}
+
+.selectInput{
+	border: 2px white solid;
+	border-radius: 5px;
+	background-color: white;
+	width: 150px;
+	font-family: 'Montserrat';
+}
+
+.formButton{
+	border-radius: 5px;
+	border: 2px green solid;
+	background-color: transparent;
+	font-family: 'Montserrat';
+	font-weight: bold;
+}
+
+.formButton:hover{
+	color: rgb(192, 192, 192);
+}
+
+#titulo{
+    text-align: center;
+    font-family: Montserrat;
+    color:white;
+}
+
+/* Barra de pesquisa */
+
+.searchBtn{
+	font-weight: bold;
+	color:white;
+	background-color: transparent;
+}
+

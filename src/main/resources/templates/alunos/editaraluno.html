@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/pstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Cadastro de Aluno</title>
+</head>
+
+<body>
+    <header th:replace="~{fragments/header.html :: header}"></header>
+    
+    <h2 id="titulo">CADASTRO DE ALUNOS - EDITAR</h2>
+    <hr>
+    
+    <br>
+    
+    <form method="post" th:action="@{/editar}" th:object="${aluno}">
+        <div class="formBox">
+            <label class="formLabel">Matrícula:</label><br>
+            <input class="formInput" id="matricula" type="text" th:field="*{matricula}" readonly><br>
+
+            <label class="formLabel">Nome completo:</label><br>
+            <input class="formInput" type="text" th:field="*{nome}" required><br>
+
+            <label class="formLabel">Curso:</label><br>
+            <select class="selectInput" type="text" th:field="*{curso}">
+				<option th:each="curso : ${T(com.gerenciamentoalunos.enums.Curso).values()}" th:value="${curso}" th:text="${curso.name()}"></option>
+			</select><br>
+
+            <label class="formLabel">Turno:</label><br>
+            <select class="selectInput" th:field="*{turno}">
+				<option th:each="turno : ${T(com.gerenciamentoalunos.enums.Turno).values()}" th:value="${turno}" th:text="${turno.name()}"></option>
+			</select>
+			
+			<br>
+			<br>
+			
+			<button type="submit" class="formButton">Enviar</button>
+			
+        </div>
+    </form>
+
+    <script>
+        function GeraMatricula(){
+            let txtvar = "ALU";
+	
+            const date = new Date();
+            let ano = String(date.getFullYear());
+
+            let random = String(Math.floor(Math.random() * 999));
+
+            document.getElementById("matricula").value = (txtvar + ano + random);
+        }
+    </script>
+</body>
+
+</html>

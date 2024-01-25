@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/css/pstyle.css">
+    <title>LISTA DE ALUNOS</title>
+</head>
+<body>
+    <header th:replace="~{fragments/header.html :: header}"></header>
+    
+    <div class="searchBar">
+		<form method="get" action="/alunos">
+			<input type="search" placeholder="Busca por nome" name="nome">
+			<button class="searchBtn" type="submit">
+				<i class="bi bi-search"></i>
+			</button>
+		</form>
+	</div>
+	
+	<br>
+	<br>
+	
+    <div class="tableDiv">
+	    <table class="dataTable">
+	        <th class="tableHead">MATRICULA</th>
+	        <th class="tableHead">NOME</th>
+	        <th class="tableHead">CURSO</th>
+	        <th class="tableHead">TURNO</th>
+	        <th class="tableHead">OPÇÕES</th>
+	        
+	        <tr scope="row" th:each="aluno : ${alunosList}" > 
+				<td class="tableData" th:text="${aluno.matricula}"></td>
+		        <td class="tableData" th:text="${aluno.nome}"></td>
+		        <td class="tableData" th:text="${aluno.curso}"></td>
+		        <td class="tableData" th:text="${aluno.turno}"></td>
+		        <td class="tableData">
+					<a class="opt-btn-edit" th:href="@{/editar/{matricula} (matricula=${aluno.matricula}) }"><i class="bi bi-pencil-square"></i> Editar</a>
+					<a class="opt-btn-delete" th:href="@{/delete/{matricula} (matricula=${aluno.matricula}) }"><i class="bi bi-trash-fill"></i> Deletar</a>
+				</td>
+	        </tr>
+	        
+	    </table>
+    </div>
+</body>
+</html>
